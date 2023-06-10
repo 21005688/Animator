@@ -1,6 +1,7 @@
 # Animator
 
 ## Aim:
+To develop a animator using unity with C# prgram and move the animator.
 
 ## Algorithm:
 ### Step 1: Download 2 crouch idle from maximo 3d. Drag it and drop it in unity asset.
@@ -20,7 +21,46 @@
 ### Step 15: In blend tree, in blend type choose (2D Freedom Directional), parameter (InputX, InputY) , one crouch (0,-1,1) and walking (1,0,1). Bring the camera under the player 
 
 ## Program:
+```
+DEVELOPED BY : DEEPIKA.J
+REGISTER NO : 212221230016
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class IdletoCrouch : MonoBehaviour
+{
+    public Animator animator;
+    public float InputX;
+    public float InputY;
+    // Start is called before the first frame update
+    void Start()
+    {
+        animator = this.gameObject.GetComponent<Animator>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        InputX = Input.GetAxis("Vertical");
+        InputY = Input.GetAxis("Horizontal");
+        animator.SetFloat("InputX", InputX);
+        animator.SetFloat("InputY", InputY);
+    }
+}
+```
 
 ## Output:
 
+![l1](https://github.com/21005688/Animator/assets/94747031/3b003ba1-e7c1-4d38-b97f-02225e69bdb9)
+
+![l2](https://github.com/21005688/Animator/assets/94747031/e7043e33-b308-46a0-9242-49cad87d7475)
+
+
+![l3](https://github.com/21005688/Animator/assets/94747031/495c9b54-c068-427f-86b8-8b6982e5875a)
+
+
 ## Result:
+
+Thus, the animator was successfully developed in unity engine with the C#.
